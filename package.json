@@ -13,7 +13,7 @@
     "type": "git",
     "url": "git+ssh://git@github.com/chemzqm/onresize.git"
   },
-  "keywords": [],
+  "keywords": ["resize"],
   "author": "chemzqm@gmail.com",
   "license": "MIT",
   "bugs": {
