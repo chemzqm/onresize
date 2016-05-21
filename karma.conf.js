@@ -3,10 +3,10 @@ var testIndex = './test/test.js'
 var path = require('path')
 var webpack = require('./webpack.config')
 var preLoaders = webpack.module.preLoaders || []
-// only files in lib
+// only files in src
 preLoaders.push({
-  include: [path.resolve('lib')],
-  loader:'istanbul-instrumenter'
+  include: [path.resolve('src')],
+  loader: 'istanbul-instrumenter'
 })
 webpack.module.preLoaders = preLoaders
 
