@@ -1,4 +1,7 @@
 # Onresize
+[![NPM version](https://img.shields.io/npm/v/resizelistener.svg?style=flat-square)](https://www.npmjs.com/package/resizelistener)
+[![Dependency Status](https://img.shields.io/david/chemzqm/resizelistener.svg?style=flat-square)](https://david-dm.org/chemzqm/resizelistener)
+[![Build Status](https://img.shields.io/travis/chemzqm/onresize/master.svg?style=flat-square)](http://travis-ci.org/chemzqm/onresize)
 
 Attach resize event listener(s) to element without polling.
 
