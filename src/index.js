@@ -1,4 +1,5 @@
 var attachEvent = document.attachEvent
+var once = require('once')
 var raf = require('raf')
 
 var cancelFrame = (function(){
@@ -24,11 +25,12 @@ function objectLoad(e){
 }
 
 function removeListener (element, fn) {
+  var trigger = element.__resizeTrigger__
   element.__resizeListeners__.splice(element.__resizeListeners__.indexOf(fn), 1)
   if (!element.__resizeListeners__.length) {
     if (attachEvent) element.detachEvent('onresize', resizeListener)
-    else {
-      element.__resizeTrigger__.contentDocument.defaultView.removeEventListener('resize', resizeListener)
+    else if (trigger.contentDocument) {
+      trigger.contentDocument.defaultView.removeEventListener('resize', resizeListener)
       element.__resizeTrigger__ = !element.removeChild(element.__resizeTrigger__)
     }
   }
@@ -52,5 +54,5 @@ module.exports = function(element, fn){
     }
   }
   element.__resizeListeners__.push(fn)
-  return removeListener.bind(null, element, fn)
+  return once(removeListener.bind(null, element, fn))
 }
