@@ -1,6 +1,6 @@
 {
   "name": "resizelistener",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "add listener for element resize without pulling",
   "main": "src/index.js",
   "directories": {
